@@ -1,0 +1,427 @@
+/* ==========================================================================
+   1. СБРОС И ГЛОБАЛЬНЫЕ НАСТРОЙКИ
+   ========================================================================== */
+:root {
+    --font-luxury: 'Cinzel', serif;
+    --font-main: 'Montserrat', sans-serif;
+    --color-dark: #1a1a1a;
+    --color-gold: #c5a880;
+    --color-light: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; 
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-dark);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+.container-luxury, .form-container, .footer-container {
+    width: 100%;
+    max-width: 1100px; 
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.js-fade-element {
+    opacity: 0;
+    transform: translateY(30px);
+    will-change: opacity, transform;
+    transition: opacity 0.9s cubic-bezier(0.25, 1, 0.5, 1), transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   2. ШАПКА И НАВИГАЦИЯ
+   ========================================================================== */
+.top-banner {
+    background-color: var(--color-dark);
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: clamp(10px, 1.2vw, 13px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-gold);
+}
+
+.logo {
+    font-family: var(--font-luxury);
+    color: var(--color-dark);
+    text-decoration: none;
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.nav-cta {
+    border: 1px solid var(--color-dark);
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+    background-color: var(--color-dark);
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   3. ГЛАВНЫЙ ЭКРАН (HERO)
+   ========================================================================== */
+.hero {
+    position: relative;
+    min-height: 80vh; 
+    min-height: 80svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    background-color: #252525; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    width: 100%;
+}
+
+.hero .subtitle {
+    font-family: var(--font-luxury);
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+    font-size: clamp(12px, 1.5vw, 14px);
+    color: var(--color-gold);
+}
+
+.hero h1 {
+    font-family: var(--font-luxury);
+    font-size: clamp(1.5rem, 4.2vw, 3rem);
+    line-height: 1.4;
+    margin-bottom: 40px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.btn-luxury {
+    display: inline-block;
+    padding: 18px 40px;
+    background-color: var(--color-gold);
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-luxury:hover {
+    background-color: #b3966e;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. СЕКЦИЯ ФИЛОСОФИИ
+   ========================================================================== */
+.philosophy-section {
+    padding: clamp(60px, 7vw, 100px) 0;
+    text-align: center;
+    background-color: var(--color-light);
+}
+
+.philosophy-title {
+    font-family: var(--font-luxury);
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    font-weight: 400;
+    max-width: 850px;
+    margin: 0 auto 30px auto;
+    line-height: 1.7;
+    color: #2c2c2c;
+}
+
+.philosophy-text {
+    font-size: clamp(14px, 1.5vw, 16px);
+    max-width: 700px;
+    margin: 0 auto 15px auto;
+    color: #555;
+    font-weight: 300;
+}
+
+.philosophy-text-highlight {
+    font-family: var(--font-luxury);
+    font-size: clamp(15px, 1.8vw, 18px);
+    margin-top: 25px;
+    color: var(--color-gold);
+    letter-spacing: 1px;
+}
+
+.line-separator {
+    width: 50px;
+    height: 1px;
+    background-color: var(--color-gold);
+    margin: 45px auto 0 auto;
+}
+
+/* ==========================================================================
+   5. СЕТКА ПРАКТИК (Защищена от падения и деформации)
+   ========================================================================== */
+.grid-section {
+    padding: clamp(60px, 7vw, 100px) 24px;
+}
+
+.luxury-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #f5f5f5;
+}
+
+.item-image {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    min-height: 250px; /* ИСПРАВЛЕНО: Страховка геометрии на случай сбоя сети */
+    background-color: #eaeaea; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.item-info {
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.item-info p {
+    font-size: clamp(14px, 1.2vw, 15px);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #4a4a4a;
+}
+
+.link-explore {
+    margin-top: auto;
+    padding-top: 25px;
+    color: var(--color-gold);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   6. ФОРМА ОБРАТНОЙ СВЯЗИ
+   ========================================================================== */
+.contact-section {
+    background-color: var(--color-dark);
+    color: #ffffff;
+    padding: clamp(60px, 7vw, 100px) 24px;
+    text-align: center;
+}
+
+.form-container h2 {
+    font-family: var(--font-luxury);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.form-container p {
+    margin-bottom: 35px;
+    color: #b0b0b0;
+}
+
+#luxuryForm {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#luxuryForm input {
+    width: 100%;
+    padding: 16px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-family: var(--font-main);
+    font-size: 16px; 
+    outline: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+#luxuryForm input:focus {
+    border-color: var(--color-gold);
+}
+
+.btn-submit {
+    background-color: #ffffff;
+    color: var(--color-dark);
+    border: none;
+    padding: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 13px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-gold);
+    color: #ffffff;
+}
+
+.success-message {
+    display: none;
+    opacity: 0;
+    margin-top: 25px;
+    color: var(--color-gold);
+    transition: opacity 0.4s ease;
+}
+
+/* ==========================================================================
+   7. ПОДВАЛ
+   ========================================================================== */
+footer {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 40px 24px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-logo {
+    font-family: var(--font-luxury);
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.footer-copy {
+    color: #555555;
+    font-size: 11px;
+}
+
+/* ==========================================================================
+   8. МЕДИА-ЗАПРОСЫ
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .logo {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+
+    .luxury-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .item-image {
+        aspect-ratio: 16 / 10;
+        min-height: 220px;
+    }
+
+    .item-info {
+        padding: 30px 20px;
+    }
+}
+
